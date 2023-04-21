@@ -58,15 +58,21 @@ function showPosition(position) {
 }
 
 function showCurrentTemp(response) {
-  let tempature = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector(".temperature");
-  currentTemp.innerHTML = `${tempature}°C`;
+  currentTemp.innerHTML = `${temperature}°C`;
   let city = response.data.name;
   let currentCity = document.querySelector("h1#city");
   currentCity.innerHTML = `${city}`;
   let temperatureDescription = response.data.weather[0].description;
   let description = document.querySelector("#description");
   description.innerHTML = temperatureDescription;
+
+  let humitidyElement = document.querySelector("#humidity");
+  humitidyElement.innerHTML = response.data.main.humidity;
+
+  let windElement = document.querySelector("#wind-speed");
+  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
 }
 
 navigator.geolocation.getCurrentPosition(showPosition);
