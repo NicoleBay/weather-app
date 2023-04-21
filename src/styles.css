@@ -21,6 +21,10 @@ h1#city {
   text-transform: capitalize;
 }
 
+h1#city {
+  margin-top: 10px;
+}
+
 p#description {
   font-size: 20px;
   font-weight: 600;
