@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <title>Weather-app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/9ca11de569.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card rounded">
+        <div class="card-body background-app">
+          <div class="header">
+            <form>
+              <div class="row">
+                <div class="col-9">
+                  <input
+                    type="text"
+                    placeholder="Search for a city..."
+                    class="form-control text-muted form-rounded p-2 shadow-sm"
+                    autocomplete="off"
+                    autofocus="on"
+                  />
+                </div>
+                <div class="col-3">
+                  <input type="submit" value="Search" class="btn btn-info" />
+                </div>
+              </div>
+            </form>
+
+            <button class="btn btn-info my-3" id="currentLocationButton">
+              <i class="fa-solid fa-location-arrow"></i>
+              Use my current location
+            </button>
+          </div>
+
+          <div class="card rounded text-center">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6 my-3">
+                  <h1>London</h1>
+                  <p>Thursday 20th April 2023</p>
+                  <img src="figures/overcast.png" class="weather-icon" />
+                </div>
+                <div class="col-6 my-5">
+                  <span class="border border-dark rounded text-muted p-2"
+                    >Last updated: 16:45</span
+                  >
+
+                  <div class="current-forecast my-5">
+                    <span>7&deg;C</span>
+                    <p>Clear sky</p>
+                    <br />
+                    <p><i class="fa-solid fa-wind"></i> Wind speed: 3mph</p>
+                    <p>
+                      <i class="fa-solid fa-temperature-full"></i> Humidity: 75%
+                    </p>
+                    <p>
+                      <i class="fa-solid fa-eye-slash"></i> Visibility: Moderate
+                    </p>
+                  </div>
+
+                  <div class="sunrise-sunset">
+                    <span>Sunrise 06:48</span>
+                    |
+                    <span>Sunset 17:48</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card rounded my-2">
+            <div class="card-body">
+              <div class="bottom-section-forecast text-center my-2">
+                <div class="row">
+                  <div class="col-2">
+                    <div class="forecast-day">Fri</div>
+                    <img
+                      class="forecast"
+                      src="figures/overcast.png"
+                      alt=""
+                      width="70"
+                    />
+                    <div class="forecast-temperatures">
+                      <span class="forecast-max">6&deg;C</span>
+                      |
+                      <span class="forecast-min">1&deg;C</span>
+                    </div>
+                  </div>
+
+                  <div class="col-2">
+                    <div class="forecast-day">Sat</div>
+                    <img
+                      class="forecast"
+                      src="figures/overcast.png"
+                      alt=""
+                      width="70"
+                    />
+                    <div class="forecast-temperatures">
+                      <span class="forecast-max">6&deg;C</span>
+                      |
+                      <span class="forecast-min">2&deg;C</span>
+                    </div>
+                  </div>
+
+                  <div class="col-2">
+                    <div class="forecast-day">Sun</div>
+                    <img
+                      class="forecast"
+                      src="figures/cloud-rain.png"
+                      alt=""
+                      width="70"
+                    />
+                    <div class="forecast-temperatures">
+                      <span class="forecast-max">7&deg;C</span>
+                      |
+                      <span class="forecast-min">1&deg;C</span>
+                    </div>
+                  </div>
+
+                  <div class="col-2">
+                    <div class="forecast-day">Mon</div>
+                    <img
+                      class="forecast"
+                      src="figures/cloud-rain.png"
+                      alt=""
+                      width="70"
+                    />
+                    <div class="forecast-temperatures">
+                      <span class="forecast-max">8&deg;C</span>
+                      |
+                      <span class="forecast-min">1&deg;C</span>
+                    </div>
+                  </div>
+
+                  <div class="col-2">
+                    <div class="forecast-day">Tues</div>
+                    <img
+                      class="forecast"
+                      src="figures/snow.png"
+                      alt=""
+                      width="70"
+                    />
+                    <div class="forecast-temperatures">
+                      <span class="forecast-max">5&deg;C</span>
+                      |
+                      <span class="forecast-min">-3&deg;C</span>
+                    </div>
+                  </div>
+
+                  <div class="col-2">
+                    <div class="forecast-day">Wed</div>
+                    <img
+                      class="forecast"
+                      src="figures/snow.png"
+                      alt=""
+                      width="70"
+                    />
+                    <div class="forecast-temperatures">
+                      <span class="forecast-max">5&deg;C</span>
+                      |
+                      <span class="forecast-min">-1&deg;C</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <footer>
+        <p>
+          <a
+            href="https://github.com/NicoleBay/weather-app-draft.git"
+            target="_blank"
+            >Open-sourced code</a
+          >
+          by Nicole Baylis
+        </p>
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
