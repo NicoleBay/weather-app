@@ -1,0 +1,82 @@
+body {
+  font-family: "PT Mono", monospace;
+  background-color: #f6f6f6;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+footer {
+  text-align: center;
+}
+
+img.forecast {
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+p#description,
+h1#city {
+  text-transform: capitalize;
+}
+
+p#description {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+span.border-dark {
+  font-size: 14px;
+  color: #212529;
+  background-color: #56d4f3;
+  border-color: #85a6b1;
+}
+
+span.temperature {
+  font-size: 50px;
+  line-height: 70px;
+}
+
+.bottom-section-forecast {
+  font-family: "Lato", sans-serif;
+}
+
+.weather-app {
+  margin: 15px auto;
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: transparent;
+  padding: 5x;
+  max-width: 700px;
+  line-height: 1;
+}
+
+.weather-icon {
+  width: 140px;
+}
+
+.forecast-day,
+.forecast-max {
+  font-weight: 600;
+}
+
+.forecast-min {
+  font-size: 14px;
+}
+
+.background-app {
+  background-color: #c4dce0;
+}
+
+.btn-info {
+  color: #212529;
+  background-color: #85a6b1;
+  border-color: #414a50;
+}
+
+.btn-info:hover {
+  color: #212529;
+  background-color: #51adcf;
+  border-color: #07588a;
+}
