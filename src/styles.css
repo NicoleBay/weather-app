@@ -16,7 +16,7 @@ img.forecast {
   padding: 5px 10px;
 }
 
-p#description,
+#description,
 h1#city {
   text-transform: capitalize;
 }
@@ -25,21 +25,10 @@ h1#city {
   margin-top: 10px;
 }
 
-#description {
-  text-transform: capitalize;
-}
-
 .last-updated,
 #date {
   line-height: 2;
   font-size: 14px;
-}
-
-span.border-dark {
-  font-size: 12px;
-  color: #212529;
-  background-color: #c4dce0;
-  border-color: #85a6b1;
 }
 
 span.temperature {
