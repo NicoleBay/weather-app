@@ -60,31 +60,27 @@
                 <div class="row">
                   <div class="col-6 my-3">
                     <h1 id="city"></h1>
-                    <p id="date"></p>
+                    <span class="last-updated">Last updated</span>
+                    <span id="date"></span>
                     <img src="figures/overcast.png" class="weather-icon" />
                     <br />
                     <span class="temperature">&deg;C</span>
                   </div>
 
                   <div class="col-6 my-5">
-                    <span class="border border-dark rounded text-muted p-2"
-                      >Last update: 16:45</span
-                    >
-
                     <div class="current-forecast my-5">
-                      <p id="description">Clear sky</p>
                       <br />
                       <p>
+                        <i class="fa-solid fa-hashtag"></i>
+                        <span id="description">--</span>
+                      </p>
+                      <p>
                         <i class="fa-solid fa-wind"></i> Wind speed:
-                        <span id="wind-speed"></span>km/h
+                        <span id="wind-speed">--</span>km/h
                       </p>
                       <p>
                         <i class="fa-solid fa-temperature-full"></i>
-                        Humidity: <span id="humidity"></span>%
-                      </p>
-                      <p>
-                        <i class="fa-solid fa-eye-slash" id="visibility"></i>
-                        Visibility: Moderate
+                        Humidity: <span id="humidity">--</span>%
                       </p>
                     </div>
 

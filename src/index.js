@@ -73,6 +73,11 @@ function showCurrentTemp(response) {
 
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+
+  let lastUpdateElement = document.querySelector("#last-updated");
+  lastUpdateElement.innerHTML = response.data.lastupdate.value;
+
+  document.querySelector("#date");
 }
 
 navigator.geolocation.getCurrentPosition(showPosition);
