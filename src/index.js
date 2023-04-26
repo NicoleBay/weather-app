@@ -1,4 +1,4 @@
-//display the current date and time using JavaScript
+//display the current date and time
 
 function formatDate(date) {
   let days = [
@@ -60,10 +60,12 @@ function showPosition(position) {
 function showCurrentTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector(".temperature");
-  currentTemp.innerHTML = `${temperature}°C`;
+  currentTemp.innerHTML = `${temperature}&deg;C`;
+
   let city = response.data.name;
   let currentCity = document.querySelector("h1#city");
   currentCity.innerHTML = `${city}`;
+
   let temperatureDescription = response.data.weather[0].description;
   let description = document.querySelector("#description");
   description.innerHTML = temperatureDescription;
@@ -72,10 +74,19 @@ function showCurrentTemp(response) {
   humitidyElement.innerHTML = response.data.main.humidity;
 
   let windElement = document.querySelector("#wind-speed");
-  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+  windElement.innerHTML = Math.round(response.data.wind.speed * 2.24);
 
-  let lastUpdateElement = document.querySelector("#last-updated");
-  lastUpdateElement.innerHTML = response.data.lastupdate.value;
+  let feelsLike = Math.round(response.data.main.feels_like);
+  let feelsLikeElement = document.querySelector("#feels-like");
+  feelsLikeElement.innerHTML = `${feelsLike}&deg;C`;
+
+  let tempHi = Math.round(response.data.main.temp_max);
+  let tempHiElement = document.querySelector("#temp-hi");
+  tempHiElement.innerHTML = `${tempHi}&deg;C`;
+
+  let tempLo = Math.round(response.data.main.temp_min);
+  let tempLoElement = document.querySelector("#temp-lo");
+  tempLoElement.innerHTML = `${tempLo}&deg;C`;
 
   document.querySelector("#date");
 }

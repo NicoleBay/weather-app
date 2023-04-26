@@ -59,35 +59,41 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-6 my-3">
-                    <h1 id="city"></h1>
+                    <h1 id="city">--</h1>
                     <span class="last-updated">Last updated</span>
                     <span id="date"></span>
-                    <img src="figures/overcast.png" class="weather-icon" />
+                    <img src="figures/overcast.png" alt="" id="weather-icon" />
                     <br />
-                    <span class="temperature">&deg;C</span>
+                    <span class="temperature">--</span>
                   </div>
 
                   <div class="col-6 my-5">
                     <div class="current-forecast my-5">
-                      <br />
                       <p>
                         <i class="fa-solid fa-hashtag"></i>
                         <span id="description">--</span>
                       </p>
                       <p>
+                        <i class="fa-solid fa-temperature-full"></i>
+                        Feels like: <span id="feels-like">--&deg;C</span>
+                      </p>
+
+                      <p>
                         <i class="fa-solid fa-wind"></i> Wind speed:
-                        <span id="wind-speed">--</span>km/h
+                        <span id="wind-speed">--</span>mph
                       </p>
                       <p>
-                        <i class="fa-solid fa-temperature-full"></i>
+                        <i class="fa-solid fa-droplet"></i>
                         Humidity: <span id="humidity">--</span>%
                       </p>
                     </div>
-
-                    <div class="sunrise-sunset">
-                      <span>Sunrise 06:48</span>
-                      |
-                      <span>Sunset 17:48</span>
+                    <div class="hi-low-temp">
+                      <p>
+                        High:
+                        <span id="temp-hi">--&deg;C</span>
+                        | Low:
+                        <span id="temp-lo">--&deg;C</span>
+                      </p>
                     </div>
                   </div>
                 </div>

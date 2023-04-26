@@ -21,19 +21,32 @@ h1#city {
   text-transform: capitalize;
 }
 
+#description,
+h1#city,
+.temperature,
+.forecast-day,
+#temp-hi {
+  font-weight: 600;
+  color: #414a50;
+}
+
 h1#city {
   margin-top: 10px;
+}
+
+#weather-icon {
+  width: 140px;
+}
+
+span.temperature {
+  font-size: 50px;
+  line-height: 70px;
 }
 
 .last-updated,
 #date {
   line-height: 2;
   font-size: 14px;
-}
-
-span.temperature {
-  font-size: 50px;
-  line-height: 70px;
 }
 
 .bottom-section-forecast {
@@ -50,13 +63,10 @@ span.temperature {
   line-height: 1;
 }
 
-.weather-icon {
-  width: 140px;
-}
-
 .forecast-day,
 .forecast-max {
   font-weight: 600;
+  color: #414a50;
 }
 
 .forecast-min {
