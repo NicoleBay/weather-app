@@ -97,7 +97,7 @@ function showCurrentTemp(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  displayForecast();
+  getForecast(response.data.coord);
 }
 
 navigator.geolocation.getCurrentPosition(showPosition);
@@ -142,7 +142,8 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 //6 day forecast (called in city data too)
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Fri", "Sat", "Sun", "Mon", "Tues", "Wed"];
@@ -171,4 +172,11 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "211079cb69f39157cca4d1f04ca9b60c";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
