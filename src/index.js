@@ -96,6 +96,8 @@ function showCurrentTemp(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celsiusTemperature = response.data.main.temp;
+
+  displayForecast();
 }
 
 navigator.geolocation.getCurrentPosition(showPosition);
@@ -137,3 +139,36 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+//6 day forecast (called in city data too)
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tues", "Wed"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+                    
+                    <div class="col-2">
+                      <div class="forecast-day">${day}</div>
+                      <img
+                        class="forecast"
+                        src="figures/overcast.png"
+                        alt=""
+                        width="70"
+                      />
+                      <div class="forecast-temperatures">
+                        <span class="forecast-max">6&deg;</span>
+                        |
+                        <span class="forecast-min">1&deg;</span>
+                      </div>
+                      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
