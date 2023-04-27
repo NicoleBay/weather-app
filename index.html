@@ -35,7 +35,7 @@
                 <div class="row">
                   <div class="col-9">
                     <input
-                      type="text"
+                      type="search"
                       placeholder="Search for a city..."
                       class="form-control text-muted form-rounded p-2 shadow-sm"
                       autocomplete="off"
@@ -62,9 +62,13 @@
                     <h1 id="city">--</h1>
                     <span class="last-updated">Last updated</span>
                     <span id="date"></span>
-                    <img src="figures/overcast.png" alt="" id="weather-icon" />
+                    <img src="" alt="" id="weather-icon" />
                     <br />
                     <span class="temperature">--</span>
+                    <span class="units"
+                      ><a href="#" id="celsius-link" class="active">°C</a> |
+                      <a href="#" id="fahrenheit-link">°F</a></span
+                    >
                   </div>
 
                   <div class="col-6 my-5">

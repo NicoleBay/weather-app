@@ -11,9 +11,19 @@ footer {
   text-align: center;
 }
 
-img.forecast {
+img.forecast,
+#weather-icon {
   margin: 10px;
   padding: 5px 10px;
+}
+
+h1#city {
+  margin-top: 10px;
+}
+
+span.temperature {
+  font-size: 50px;
+  line-height: 70px;
 }
 
 #description,
@@ -30,23 +40,25 @@ h1#city,
   color: #414a50;
 }
 
-h1#city {
-  margin-top: 10px;
-}
-
-#weather-icon {
-  width: 140px;
-}
-
-span.temperature {
-  font-size: 50px;
-  line-height: 70px;
-}
-
 .last-updated,
 #date {
   line-height: 2;
   font-size: 14px;
+}
+
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+
+.active {
+  color: #414a50;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
 }
 
 .bottom-section-forecast {
