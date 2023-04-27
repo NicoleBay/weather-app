@@ -80,14 +80,6 @@ function showCurrentTemp(response) {
   let feelsLikeElement = document.querySelector("#feels-like");
   feelsLikeElement.innerHTML = `${feelsLike}&deg;C`;
 
-  let tempHi = Math.round(response.data.main.temp_max);
-  let tempHiElement = document.querySelector("#temp-hi");
-  tempHiElement.innerHTML = `${tempHi}&deg;C`;
-
-  let tempLo = Math.round(response.data.main.temp_min);
-  let tempLoElement = document.querySelector("#temp-lo");
-  tempLoElement.innerHTML = `${tempLo}&deg;C`;
-
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
     "src",
@@ -143,31 +135,38 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 //6 day forecast (called in city data too)
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tues", "Wed"];
-
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
                     
                     <div class="col-2">
-                      <div class="forecast-day">${day}</div>
+                      <div class="forecast-day">${formatDay(
+                        forecastDay.dt
+                      )}</div>
                       <img
-                        class="forecast"
-                        src="figures/overcast.png"
+                        src="http://openweathermap.org/img/wn/${
+                          forecastDay.weather[0].icon
+                        }@2x.png"
                         alt=""
                         width="70"
                       />
                       <div class="forecast-temperatures">
-                        <span class="forecast-max">6&deg;</span>
+                        <span class="forecast-max">${Math.round(
+                          forecastDay.temp.max
+                        )}&deg;</span>
                         |
-                        <span class="forecast-min">1&deg;</span>
+                        <span class="forecast-min">${Math.round(
+                          forecastDay.temp.min
+                        )}&deg;</span>
                       </div>
                       </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -179,4 +178,12 @@ function getForecast(coordinates) {
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
 }
