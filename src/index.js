@@ -39,16 +39,12 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let cityElement = document.querySelector("#city");
   let cityInputElement = document.querySelector("#city-input");
-  cityElement.innerHTML = `${cityInput.value}`;
   search(cityInputElement.value);
 }
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-search("London");
 
 //city data
 
@@ -190,3 +186,5 @@ function formatDay(timestamp) {
 
   return days[day];
 }
+
+search("London");
