@@ -30,6 +30,26 @@
       <div class="weather-app">
         <div class="card rounded">
           <div class="card-body background-app">
+            <div class="app-title">
+              <input type="checkbox" name="change-theme" id="change-theme" />
+              <label for="change-theme" class="icons">
+                <img
+                  src="figures/sun-icon.svg"
+                  alt=""
+                  width="30"
+                  height="30"
+                  class="icon-sun"
+                />
+                <img
+                  src="figures/moon-icon.svg"
+                  alt=""
+                  width="30"
+                  height="30"
+                  class="icon-moon"
+                />
+              </label>
+            </div>
+            <br />
             <div class="header">
               <form id="search-form">
                 <div class="row">
@@ -64,10 +84,7 @@
                     <span id="date"></span>
                     <img src="" alt="" id="weather-icon" />
                     <span class="temperature">--</span>
-                    <span class="units"
-                      ><a href="#" id="celsius-link" class="active">°C</a> |
-                      <a href="#" id="fahrenheit-link">°F</a></span
-                    >
+                    <span class="units">&deg;C</span>
                   </div>
                   <div class="col-6 my-3">
                     <div class="current-forecast my-5">
@@ -77,7 +94,7 @@
                       </p>
                       <p>
                         <i class="fa-solid fa-temperature-full"></i>
-                        Feels like: <span id="feels-like">--&deg;C</span>
+                        Feels like: <span id="feels-like">--&deg;</span>
                       </p>
 
                       <p>

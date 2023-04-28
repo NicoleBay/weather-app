@@ -79,7 +79,7 @@ function showCurrentTemp(response) {
 
   let feelsLike = Math.round(response.data.main.feels_like);
   let feelsLikeElement = document.querySelector("#feels-like");
-  feelsLikeElement.innerHTML = `${feelsLike}&deg;C`;
+  feelsLikeElement.innerHTML = `${feelsLike}&deg;`;
 
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
@@ -87,8 +87,6 @@ function showCurrentTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  celsiusTemperature = response.data.main.temp;
 
   getForecast(response.data.coord);
 }
@@ -102,34 +100,6 @@ function getCurrentPosition(event) {
 
 let locationButton = document.querySelector("#currentLocationButton");
 locationButton.addEventListener("click", getCurrentPosition);
-
-//Celsius and fahrenheit (called in city data too)
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".temperature");
-
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector(".temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 //6 day forecast (called in city data too)
 
@@ -186,5 +156,17 @@ function formatDay(timestamp) {
 
   return days[day];
 }
+
+//Dark mode
+
+let ChangeThemeBtn = document.querySelector("#change-theme");
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+}
+
+ChangeThemeBtn.addEventListener("change", function () {
+  toggleDarkMode();
+});
 
 search("London");

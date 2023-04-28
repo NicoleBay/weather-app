@@ -28,7 +28,8 @@ h1#city {
 #description,
 h1#city,
 .temperature,
-.forecast-day {
+.forecast-day,
+.units {
   font-weight: 600;
   color: #414a50;
 }
@@ -50,15 +51,6 @@ h1#city,
   font-size: 18px;
   top: -15px;
   left: -15px;
-}
-
-.active {
-  color: #414a50;
-  cursor: default;
-}
-
-.active:hover {
-  text-decoration: none;
 }
 
 .bottom-section-forecast {
@@ -91,12 +83,53 @@ h1#city,
 
 .btn-info {
   color: #212529;
-  background-color: #85a6b1;
+  background-color: #ffcece;
   border-color: #414a50;
 }
 
 .btn-info:hover {
   color: #212529;
-  background-color: #51adcf;
-  border-color: #07588a;
+  background-color: #ffb5b5;
+  border-color: #414a50;
+}
+
+/* Dark theme start */
+
+.dark .background-app {
+  background-color: #385170;
+}
+
+.dark .icon-sun {
+  display: none;
+}
+
+.dark .icon-moon {
+  display: block;
+  filter: invert(100%) sepia(3%) saturate(0%) hue-rotate(18deg) brightness(104%)
+    contrast(102%);
+}
+
+.dark .btn-info {
+  color: #212529;
+  background-color: #f78536;
+  border-color: #414a50;
+}
+
+.dark .btn-info:hover {
+  color: #212529;
+  background-color: #ffd3b6;
+  border-color: #414a50;
+}
+
+/* Dark theme - end */
+
+input[type="checkbox"] {
+  display: none;
+}
+.icon-sun {
+  display: block;
+}
+
+.icon-moon {
+  display: none;
 }
