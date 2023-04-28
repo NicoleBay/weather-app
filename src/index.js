@@ -31,19 +31,24 @@ mainDate.innerHTML = formatDate(now);
 
 //Search engine
 
-function search(event) {
-  event.preventDefault();
-  let cityElement = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-input");
-  cityElement.innerHTML = `${cityInput.value}`;
+function search(city) {
   let apiKey = "211079cb69f39157cca4d1f04ca9b60c";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showCurrentTemp);
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#city");
+  let cityInputElement = document.querySelector("#city-input");
+  cityElement.innerHTML = `${cityInput.value}`;
+  search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("London");
 
 //city data
 
@@ -91,8 +96,6 @@ function showCurrentTemp(response) {
 
   getForecast(response.data.coord);
 }
-
-navigator.geolocation.getCurrentPosition(showPosition);
 
 //current location button
 

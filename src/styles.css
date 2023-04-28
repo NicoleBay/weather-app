@@ -36,8 +36,8 @@ h1#city,
 .temperature {
   font-size: 50px;
   position: relative;
-  bottom: -10px;
-  left: -25px;
+  bottom: -15px;
+  left: -15px;
 }
 .last-updated,
 #date {
@@ -47,9 +47,9 @@ h1#city,
 
 .units {
   position: relative;
-  font-size: 16px;
-  top: -34px;
-  left: -30px;
+  font-size: 18px;
+  top: -15px;
+  left: -15px;
 }
 
 .active {
